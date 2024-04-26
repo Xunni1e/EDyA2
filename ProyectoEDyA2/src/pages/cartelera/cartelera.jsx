@@ -1,6 +1,12 @@
+import Navbar from "../../components/shared/Navbar"
 const Cartelera =()=>{
     return(
-        <div>Cartelera</div>
+        <>
+            <Navbar/>
+            <div>Cartelera</div>
+        </>
+        
+
     )
     
 }
