@@ -1,0 +1,42 @@
+.cartelera-container {
+    margin: 0px;
+}
+
+body{
+    margin: 10%;
+}
+  
+.cartelera-header {
+    text-align: left;
+    margin-bottom: 2rem; /* Ajusta según la separación que desees */
+}
+  
+.cartelera-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px; /* Cambiado a 36 como solicitado */
+    margin: 0px 0px 20px 30px; /* Margen para separar el título de la línea */
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cartelera-titulo .cartelera {
+    color: #000000; /* Color negro para "CARTELERA" */
+    font-weight: 300; /* Poppins regular */
+}
+
+.cartelera-titulo .cali {
+    color: #1B003A; /* Color morado para "CALI" */
+    font-weight: 600; /* Poppins bold */
+}
+  
+.cartelera-linea {
+    width: 95%; /* O el porcentaje que prefieras para el ancho de la línea */
+    height: 3px; /* Altura de la línea */
+    background-color: #1B003A; /* Color de la línea */
+    margin: 0px 30px 0px 30px;
+}
+  
+.peliculas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro tarjetas por fila */
+    margin: 0px 30px 0px 20px;
+}
