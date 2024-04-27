@@ -8,35 +8,35 @@ body{
   
 .cartelera-header {
     text-align: left;
-    margin-bottom: 2rem; /* Ajusta según la separación que desees */
+    margin-bottom: 2rem;
 }
   
 .cartelera-titulo {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px; /* Cambiado a 36 como solicitado */
-    margin: 0px 0px 20px 30px; /* Margen para separar el título de la línea */
+    font-size: 28px;
+    margin: 0px 0px 20px 30px;
     text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
 }
 
 .cartelera-titulo .cartelera {
-    color: #000000; /* Color negro para "CARTELERA" */
-    font-weight: 300; /* Poppins regular */
+    color: #000000;
+    font-weight: 300;
 }
 
 .cartelera-titulo .cali {
-    color: #1B003A; /* Color morado para "CALI" */
-    font-weight: 600; /* Poppins bold */
+    color: #1B003A;
+    font-weight: 600;
 }
   
 .cartelera-linea {
-    width: 95%; /* O el porcentaje que prefieras para el ancho de la línea */
-    height: 3px; /* Altura de la línea */
-    background-color: #1B003A; /* Color de la línea */
+    width: 95%;
+    height: 3px;
+    background-color: #1B003A;
     margin: 0px 30px 0px 30px;
 }
   
 .peliculas-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cuatro tarjetas por fila */
+    grid-template-columns: repeat(4, 1fr);
     margin: 0px 30px 0px 20px;
 }

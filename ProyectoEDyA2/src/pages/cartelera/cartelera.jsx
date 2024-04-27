@@ -15,11 +15,9 @@ export default Cartelera
 =======
 import React from 'react';
 import PeliculaCard from '../../components/shared/PeliculaCard';
-import './cartelera.css'; // Asegúrate de que tienes un CSS que maneje el layout
 import Carrusel from '../../components/Carrusel.jsx';
+import './cartelera.css';
 
-// Aquí usamos un arreglo estático para fines de demostración.
-// En una aplicación real, podrías obtener este arreglo desde una API o tu estado de React.
 const peliculas = [
     { id: 1, imagen: '/img/cartelera/alerta_roja.jpg', titulo: 'Alerta Roja', genero: 'Accción, Comedia' },
     { id: 2, imagen: '/img/cartelera/black_panther.jpg', titulo: 'Black Panther 2: Wakanda Forever', genero: 'Acción, Aventura, Ciencia ficción' },
