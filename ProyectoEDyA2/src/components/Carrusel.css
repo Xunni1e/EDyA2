@@ -1,0 +1,68 @@
+.mySwiper {
+    width: 93.4%;
+    height: 500px;
+    overflow: visible;
+    padding: 35px 0px 0px;
+    align-items: center;
+}
+
+.mySwiper .swiper-slide {
+    height: 400px; /* Establece una altura fija para todas las slides */
+    width: 100%; /* Establece un ancho fijo para todas las slides */
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.mySwiper .image-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen fuera de la slide */
+}
+  
+  /* Ajusta la imagen para que cubra el espacio disponible sin distorsionarse */
+.mySwiper .swiper-image {
+    height: 100%; /* Establece la altura de la imagen para que coincida con la del contenedor */
+    width: 100%; /* Establece el ancho de la imagen en auto para mantener las proporciones */
+    min-width: 100%; /* Asegura que la imagen cubra el ancho del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el área disponible */
+    transition: transform 0.2s ease-in-out;
+}
+  
+  /* Estilos para la imagen activa (central) */
+.mySwiper .swiper-slide-active .swiper-image {
+transform: scale(1.06); /* Zoom ligeramente la imagen */
+}
+
+/* Para asegurar que las diapositivas no activas no estén sobre la activa */
+
+/* Estilos específicos para la imagen activa (central) */
+.mySwiper .swiper-slide-active {
+    transform: scale(1.1); /* Aumenta la escala para el efecto sobresaliente */
+    z-index: 3; /* Asegúrate de que la diapositiva activa está por encima de las otras */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.800); /* Opcional: Añade una sombra para resaltar */
+    border-radius: 8px;
+}
+
+.mySwiper .swiper-slide::after {
+    content: ''; /* Necesario para que el pseudoelemento se muestre */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según necesites */
+    z-index: 2; /* Asegúrate de que se muestre por encima de la imagen */
+    transition: opacity 0.3s ease;
+    opacity: 1; /* Pseudoelemento totalmente visible por defecto */
+}
+
+/* Oculta el pseudoelemento para la diapositiva activa */
+.mySwiper .swiper-slide-active::after {
+    opacity: 0; /* Hace el pseudoelemento completamente transparente */
+    pointer-events: none; /* Permite la interacción con la imagen debajo */
+}
+
+.mySwiper:hover {
+    cursor: grab;
+}
