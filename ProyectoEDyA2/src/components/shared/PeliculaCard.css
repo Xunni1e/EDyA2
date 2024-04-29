@@ -6,24 +6,25 @@
 
 .pelicula-imagen-container {
     align-self: center;
-    width: 95%; /* Ancho completo del contenedor de la tarjeta */
-    height: 430px; /* Altura establecida para la imagen */
-    border-radius: 8px; /* Bordes redondeados aplicados aquí */
-    overflow: hidden; /* Asegúrate de que la imagen no sobresalga de los bordes redondeados */
+    width: 95%;
+    height: 430px;
+    border-radius: 8px;
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.800);
-    transition: transform 0.2s ease-in-out; /* Transición suave para el efecto de hover */
+    transition: transform 0.2s ease-in-out;
     background: #D5C6DC;
 }
 
 .pelicula-imagen {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Las imágenes cubren el espacio disponible */
-    border-radius: 8px; /* Asegúrate de que los bordes redondeados también se apliquen a la imagen */
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .pelicula-imagen-container:hover {
-    transform: scale(1.02); /* Solo la imagen se agranda al pasar el mouse */
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
 .pelicula-info {
@@ -32,18 +33,18 @@
 }
 
 .pelicula-titulo {
-    font-family: 'Poppins', sans-serif; /* Especifica Poppins para los títulos */
-    font-size: 20px; /* Tamaño del texto para el título */
-    font-weight: 700; /* Poppins en negrita */
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
     color: #333;
     padding: 0px 0px 5px;
     margin: 0;
 }
 
 .pelicula-genero {
-    font-family: 'Lato', sans-serif; /* Especifica Lato para los géneros */
-    font-size: 16px; /* Tamaño del texto para el género */
-    font-weight: 300; /* Lato en light */
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
     color: #666;
     padding: 0px 0px 5px;
     margin: 0;

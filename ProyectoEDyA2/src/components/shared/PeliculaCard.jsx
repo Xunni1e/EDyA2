@@ -1,18 +1,17 @@
 import React from 'react';
 import './PeliculaCard.css'; // El archivo CSS para este componente
 
-// Este componente acepta props para la imagen, título y género de la película
-const PeliculaCard = ({ imagen, titulo, genero }) => {
+const PeliculaCard = ({ imagen, titulo, genero, onClick }) => {
     return (
-    <div className="pelicula-card">
-        <div className="pelicula-imagen-container">
-        <img src={imagen} alt='/img/iconos/mas.png' className="pelicula-imagen" />
+        <div className="pelicula-card">
+            <div className="pelicula-imagen-container">
+                <img src={imagen} alt='Imagen de la película' className="pelicula-imagen"  onClick={onClick} />
+            </div>
+            <div className="pelicula-info">
+                <h3 className="pelicula-titulo">{titulo}</h3>
+                <p className="pelicula-genero">{genero}</p>
+            </div>
         </div>
-        <div className="pelicula-info">
-        <h3 className="pelicula-titulo">{titulo}</h3>
-        <p className="pelicula-genero">{genero}</p>
-        </div>
-    </div>
     );
 };
 

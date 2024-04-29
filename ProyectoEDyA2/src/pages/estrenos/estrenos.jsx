@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-const Estrenos =()=>{
-    return(
-        <div>Estrenos</div>
-    )
-}
-export default Estrenos
-=======
-import React from 'react';
+import React, { useEffect } from 'react';
 import PeliculaCard from '../../components/shared/PeliculaCard';
+import Navbar from '../../components/shared/Navbar';
 import './estrenos.css';
 
 const peliculas = [
@@ -17,13 +10,17 @@ const peliculas = [
     { id: 4, imagen: '/img/estrenos/intensamente2.jpg', titulo: 'IntensaMente2', genero: 'Aventura, Animación, Comedia, Familia' },
     { id: 5, imagen: '/img/estrenos/ghostbusters.jpg', titulo: 'Ghostbusters: Apocalipsis Fantasma', genero: 'Comedia, Fantasía' },
     { id: 6, imagen: '/img/estrenos/damsel.jpg', titulo: 'Damsel', genero: 'Acción, Aventura, Fantasía' },
-    { id: 7, imagen: '/img/estrenos/deadpool3.jpg', titulo: 'Deadpool 3', genero: 'Acción, Comedia' },
-    { id: 8, imagen: '', titulo: 'Deadpool 3', genero: 'Acción, Comedia' },
-  ];
+    { id: 7, imagen: '/img/estrenos/deadpool3.jpg', titulo: 'Deadpool 3', genero: 'Acción, Comedia' }
+];
 
-const Estrenos = () => {    
+const Estrenos = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      });
+
     return (
         <div className="estrenos-container">
+            <Navbar/>
             <div className="estrenos-header">
                 <h2 className="estrenos-titulo">
                     <span className="estrenos">PROXIMOS</span>
@@ -46,4 +43,3 @@ const Estrenos = () => {
 }
 
 export default Estrenos;
->>>>>>> Alfonso-Hernandez

@@ -1,0 +1,124 @@
+.cantidad-asientos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff00;
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    width: 710px;
+    height: 200px;
+    max-width: 750px;
+  }
+  
+  .cantidad-asientos-controladores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .menos-bttn {
+    background-color: #572297;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    padding: 0xp;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+    align-items: center;
+  }
+
+  .mas-img {
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 420px;
+    top: 29px;
+    z-index: 1;
+  }
+
+  .menos-img {
+    width: 35px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 303px;
+    top: 22px;
+    z-index: 1;
+  }
+
+  .mas-bttn {
+    background-color: #572297;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    padding: 0x;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+    align-items: center;
+  }
+
+  .mas-bttn:hover, .menos-bttn:hover {
+    background-color: #3D0B60;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.424);
+  }
+  
+  .menos-bttn:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+
+  .mas-bttn:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+  
+  .cantidad-asientos {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .cantidad-asientos-total {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #572297;
+    border-top-color: #000000;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: #000000;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.256);
+  }
+  
+  .total-precio {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+  }
+  

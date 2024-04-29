@@ -1,21 +1,8 @@
-<<<<<<< HEAD
-import Navbar from "../../components/shared/Navbar"
-const Cartelera =()=>{
-    return(
-        <>
-            <Navbar/>
-            <div>Cartelera</div>
-        </>
-        
-
-    )
-    
-}
-export default Cartelera
-=======
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PeliculaCard from '../../components/shared/PeliculaCard';
 import Carrusel from '../../components/Carrusel.jsx';
+import Navbar from '../../components/shared/Navbar.jsx';
 import './cartelera.css';
 
 const peliculas = [
@@ -26,15 +13,24 @@ const peliculas = [
     { id: 5, imagen: '/img/cartelera/dune.jpg', titulo: 'Dune: Parte Dos', genero: 'Acción, Aventura, Drama' },
     { id: 6, imagen: '/img/cartelera/d&d.jpg', titulo: 'Dungeons & Dragones: Honor entre ladrones', genero: 'Aventura, Fantasía' },
     { id: 7, imagen: '/img/cartelera/civil_war.jpg', titulo: 'Civil War', genero: 'Acción' },
-
-    // ... más películas
-  ];
+];
 
 const Cartelera = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      });
+      
+    const navigate = useNavigate();
 
     const imagenesCarrusel = peliculas.map(pelicula => pelicula.imagen);
+
+    const handleCardClick = (id) => {
+        navigate(`/pelicula/${id}`); // Cambia la URL a la de detalles de la película
+    };
     
     return (
+        <>
+        <Navbar/>
         <div className="cartelera-container">
             <Carrusel imagenes={imagenesCarrusel} />
 
@@ -52,12 +48,13 @@ const Cartelera = () => {
                         imagen={pelicula.imagen}
                         titulo={pelicula.titulo}
                         genero={pelicula.genero}
+                        onClick={() => handleCardClick(pelicula.id)}
                     />
                 ))}
             </div>
         </div>
+        </>
     );
 }
 
 export default Cartelera;
->>>>>>> Alfonso-Hernandez

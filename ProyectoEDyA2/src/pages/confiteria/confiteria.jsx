@@ -1,14 +1,11 @@
-<<<<<<< HEAD
-const Confiteria =()=>{
-    return(
-        <div>Confiteria</div>
-=======
 import React from "react"
+import Navbar from "../../components/shared/Navbar";
+import './confiteria.css';
 
 const Confiteria =()=>{
     return(
-        <>Confiteria</>
->>>>>>> Alfonso-Hernandez
+        <Navbar/>
     )
 }
-export default Confiteria
+
+export default Confiteria;

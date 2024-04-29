@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import "./Navbar.css"
 
@@ -41,7 +41,7 @@ const Navbar =()=>{
             </div>
             <div class="contenedor-botones-sec">
                 <div class="contenedor-ciudad-icono">
-                    <div class="ciudad-container">Ciudad</div>
+                    <div class="ciudad-container">Cali</div>
                     <div class="icon-1">
                         <img src="/img/iconos/marcador.png" alt="Imagen" />
                     </div>
