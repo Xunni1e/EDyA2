@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import React from "react";
+import { useParams } from "react-router-dom";
 import Navbar from "../../components/shared/Navbar";
 import DetallesPeliculaPago from "../../components/shared/DetallesPeliculaPago";
 import EscogerAsientos from "../../components/EscogerAsientos";

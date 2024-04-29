@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import CompraCard from '../../components/CompraCard';
 import Navbar from '../../components/shared/Navbar';
 import "./compras.css";
@@ -6,10 +7,12 @@ import "./compras.css";
 const Compras = () => {
     const compras = JSON.parse(localStorage.getItem('compras')) || [];
 
+    const navigate = useNavigate();
+
     const eliminarCompra = (index) => {
         const nuevasCompras = compras.filter((_, i) => i !== index);
         localStorage.setItem('compras', JSON.stringify(nuevasCompras));
-        window.location.reload();
+        navigate('/compras');
     };
 
     if (compras.length == 0) {

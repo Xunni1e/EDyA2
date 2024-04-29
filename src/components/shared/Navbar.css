@@ -79,6 +79,21 @@ header{
 
 .botones {
   justify-content: center;
+  background-color: #ffffff00;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  text-decoration: none;
+}
+
+.link-botones {
+  justify-content: center;
   background-color: #572297;
   border: none;
   cursor: pointer;
@@ -93,9 +108,10 @@ header{
   padding-right: 20px;
   text-decoration: none;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.500);
+  z-index: 4;
 }
 
-.botones:hover {
+.link-botones:hover {
   background-color: #3D0B60;
 }
 
@@ -103,9 +119,9 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45px; /* O el tamaño que prefieras para el div circular */
-  height: 45px; /* Igual al ancho para mantener la forma circular */
-  padding: 5px; /* Ajusta el relleno si es necesario */
+  width: 45px;
+  height: 45px;
+  padding: 5px;
   margin-right: 0px;
   margin-left: -10px;
   position: relative;
@@ -118,8 +134,8 @@ header{
 }
 
 .icon-1 img, .icon-2 img {
-  width: 30px; /* El tamaño del ícono */
-  height: 30px; /* Mantén la misma altura y ancho para preservar la proporción del ícono */
+  width: 30px;
+  height: 30px;
 }
 
 .link-botones{
@@ -130,7 +146,7 @@ header{
 
 .ciudad-container {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+  font-size: 16px;
   font-weight: 500;
   font-size: 20px;
   color: white;
@@ -141,7 +157,7 @@ header{
 .contenedor-ciudad-icono {
   display: flex;
   align-items: center;
-  margin-right: 15px; /* Ajusta el espacio a la derecha del bloque */
+  margin-right: 15px;
 }
 
 .ciudad-container:hover {
