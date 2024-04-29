@@ -25,7 +25,7 @@ const Cartelera = () => {
     const imagenesCarrusel = peliculas.map(pelicula => pelicula.imagen);
 
     const handleCardClick = (id) => {
-        navigate(`/pelicula/${id}`); // Cambia la URL a la de detalles de la película
+        navigate(`/pelicula/${id}`);
     };
     
     return (

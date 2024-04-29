@@ -1,5 +1,5 @@
 import React from 'react';
-import './PeliculaCard.css'; // El archivo CSS para este componente
+import './PeliculaCard.css';
 
 const PeliculaCard = ({ imagen, titulo, genero, onClick }) => {
     return (
