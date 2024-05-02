@@ -1,0 +1,73 @@
+.compra-card {
+    display: flex;
+    align-items: center;
+    background-color: #D5C6DC;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 50%;
+    left: 20%;
+    position: relative;
+    padding: 0;
+}
+
+.compra-card img {
+    width: 250px;
+    height: auto;
+    border-radius: 4px;
+    margin-right: 40px;
+    object-fit: fill;
+    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.665);
+}
+
+.compra-card div {
+    flex: 1;
+    overflow: hidden;
+}
+
+.compra-card h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: -5px;
+    color: #1B003A;
+    font-size: 30px;
+    width: 300px;
+}
+
+.compra-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.compra-card p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin: 4px 0;
+    font-size: 13px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.eliminar-compra-btn {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: #572297;
+    border-radius: 14px;
+    border-color: transparent;
+    color: white;
+    padding: 10px;
+}
+
+.eliminar-compra-btn:hover {
+    background-color: #1B003A;
+    cursor: pointer;
+}

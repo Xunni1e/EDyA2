@@ -1,0 +1,118 @@
+.detalles-pelicula-pago {
+    display: flex;
+    flex-direction: column;
+    height: 0px;
+    background-color: #000000a4;
+    color: black;
+    width: 100%;
+}
+  
+.poster-pago {
+    width: 300px;
+    top: 15px;
+    left: 80px;;
+    height: auto;
+    border-radius: 10px;
+    position: absolute;
+    align-self: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.800);
+}
+  
+.info-pelicula-pago {
+    text-align: left;
+    border-radius: 5px;
+    padding: 60px 20px;
+    z-index: 4;
+    position: absolute;
+    top: 410px;
+    left: 60px;
+    font-family: 'Lato', sans-serif; 
+    font-weight: 300;
+    margin: 5px 0px 8px;
+}
+  
+.titulo-pelicula-pago,
+.p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 5px 0px 8px;
+}
+  
+.titulo-pelicula-pago {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2em;
+    font-weight: 700;
+    color: #1B003A;
+    margin-bottom: -8px;
+    width: 400px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.256);
+}
+
+.titulo-pag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    position: absolute;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.256);
+    left: 704px;
+    right: 320px;
+    text-align: right;
+    text-justify: auto;
+}
+
+.pasos {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    left: 1200px;
+    top: 178px
+}
+
+
+.atras-img {
+    position: absolute;
+    left: 4.49px;
+    top: 5px;
+    width: 15px;
+}
+
+.atras-bttn {
+    position: absolute;
+    left: 500px;
+    top: 178px;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    border-color: transparent;
+    background-color: #572297;
+}
+
+.atras-bttn:hover {
+    cursor: pointer;
+    background-color: #3D0B60;
+}
+
+.continuar-bttn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    position: absolute;
+    left: 825px;
+    top: 500px;
+    background-color: #572297;
+    border-radius: 14px;
+    border-color: transparent;
+    color: white;
+    height: 40px;
+    width: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.524);
+}
+
+.continuar-bttn:hover {
+    cursor: pointer;
+    background-color: #3D0B60;
+}

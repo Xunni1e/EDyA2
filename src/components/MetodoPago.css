@@ -1,0 +1,82 @@
+.metodo-pago-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .tarjeta-credito {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #D5C6DC;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: absolute;
+    top: 270px;
+    left: 930px;
+    width: 300px;
+    max-width: 100000px;
+    height: 150px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .tarjeta-debito {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #D5C6DC;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: absolute;
+    top: 270px;
+    left: 500px;
+    width: 300px;
+    max-width: 100000px;
+    height: 150px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .logo-pago {
+    margin-right: 10px;
+  }
+  
+  .tarjeta-pago p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .logo-debito {
+    height: 70px;
+    position: absolute;
+    left: 200px;
+  }
+  
+  .logo-credito {
+    height: 40px;
+    position: absolute;
+    left: 105px;
+  }
+
+  .label-debito, .label-credito {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.689);
+    position: absolute;
+    left: 30px;
+    width: 115px;
+    color: #1B003A;
+  }
+
+  .tarjeta-debito:hover, .tarjeta-credito:hover {
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.427);
+    background-color: #9A6BD2;
+    color: white;
+  }
+  
+  .activo {
+    background-color: #9A6BD2;
+    color: #ffffff;
+  }
