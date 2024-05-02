@@ -1,0 +1,44 @@
+.registro-container-1{
+    
+    padding-top: 20px;
+    margin: 2%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.registro-container-1 hr{
+    background: #1B003A;
+}
+.registro-container-2{
+    text-align: center;
+    margin-top: 0;
+    margin-inline:  30%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contenedor-doble{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.doble{
+    float: left;
+}
+.btn-register{
+    justify-content: center;
+    background-color: #572297;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.500);
+    margin: 0;
+}
