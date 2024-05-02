@@ -6,6 +6,7 @@ import {
 import Cartelera from "../pages/cartelera/cartelera";
 import Estrenos from "../pages/estrenos/estrenos";
 import Confiteria from "../pages/confiteria/confiteria";
+import Registro from "../pages/registro/registro";
 const router = createBrowserRouter([
     {
         path:"/",
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     {
         path:"/confiteria",
         element: <Confiteria/>
+    },
+    {
+        path:"/registro",
+        element: <Registro/>
     }
 ])
 

@@ -1,0 +1,154 @@
+.perfil-overlay {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    position:absolute ;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+  
+  .perfil-container {
+    background-color: rgba(0, 0, 0, 0);
+    justify-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cambia el último valor para ajustar la opacidad */
+    z-index: 999; /* Asegúrate de que el fondo esté detrás del overlay */
+}
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Asegura que el fondo esté detrás del overlay */
+}
+
+.perfil-overlay {
+    position: absolute;
+    /* Estilos para resaltar el overlay */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 0;
+    width: 500%;
+    
+    
+    /* Resto de estilos */
+}
+
+.inicio-session{
+    text-align: center;
+    display: inline-block;
+    background: #572297;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+}
+
+.inicio-session h2{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+    background-color: #D5C6DC;
+    color: #6a5acd;
+    font-weight: bold;
+    margin-bottom: 5%;
+    
+  }
+
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+    background-color: #D5C6DC;
+    color: #6a5acd;
+    font-weight: bold;
+    margin-bottom: 5%;
+    
+    
+  }
+  .form-group p{
+    color: #000000;
+    text-align: left;
+    padding-bottom: 0%;
+    margin: 0;
+
+  }
+.principal{
+    padding: 10%;
+    margin: 0;
+}
+
+.btn{
+    justify-content: center;
+  background-color: #572297;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.500);
+  margin: 0;
+}
+.pie{
+    text-align: center;
+    display: inline-block;
+    background: #572297;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    margin-top: 5%;
+}
+
+.forgot-password{
+    margin-top: 0;
+}
+.forgot-password a{
+    text-decoration: none;
+    color: #572297;
+}
+.register {
+    margin-top: 5%;
+    text-align: center;
+}
+.register a{
+    text-decoration: none;
+    color: #ffffff;
+}

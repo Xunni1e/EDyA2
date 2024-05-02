@@ -164,3 +164,23 @@ cursor: pointer;
 .icon-2:hover {
 cursor: pointer;
 }
+.location-button{
+  display: inline-flex;
+  align-items: center;
+  background-color: #1B003A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.location-button-profile{
+  display: inline-flex;
+  align-items: center;
+  background-color: #572297;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  padding: 4px 8px;
+  cursor: pointer;
+}
