@@ -67,7 +67,7 @@ const peliculas = [
         id: 7,
         titulo: 'Civil War',
         clasificacionEdad: "Recomendada para Mayores de 12 años",
-        poster: '/img/cartelera/civil_war.jpeg',
+        poster: '/img/cartelera/civil_war.jpg',
         formato: "2D - Doblado",
         teatro: "Unicentro Cali",
         sala: "Sala 03"
