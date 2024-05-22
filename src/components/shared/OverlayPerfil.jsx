@@ -1,36 +1,38 @@
 
 import React, { useEffect, useRef} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './OverlayPerfil.css'
-
-
-
-
 
 const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
 
     const overlayRef = useRef(null);
 
-       
-        useEffect(() => {
-            const handleClickOutside = (event) => {
-                if (overlayRef.current && !overlayRef.current.contains(event.target)) {
-                    onClose();
-                }
-            };
+    const navigate = useNavigate();
 
-          
-            document.addEventListener("mousedown", handleClickOutside);
+    const handleRegisterClick = () => {
+        navigate(`/registro`);
+    };
 
-           
-            return () => {
-                document.removeEventListener("mousedown", handleClickOutside);
-            };
-        }, [onClose]);
-
-        const handleLoginClick = () => {
-            onLogin();
-            onClose(); 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (overlayRef.current && !overlayRef.current.contains(event.target)) {
+                onClose();
+            }
         };
+
+        
+        document.addEventListener("mousedown", handleClickOutside);
+
+        
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [onClose]);
+
+    const handleLoginClick = () => {
+        onLogin();
+        onClose(); 
+    };
 
 
     const overlayStyle={
@@ -67,7 +69,7 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
                 </div>
                 <div className='pie'>
                     <div className="register">
-                        <a href="/registro">¿No estás registrado? Regístrate aquí</a> 
+                        <a onClick={handleRegisterClick}>¿No estás registrado? Regístrate aquí</a> 
                     </div>
                 </div>
                 

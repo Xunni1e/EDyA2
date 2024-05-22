@@ -22,7 +22,7 @@ const Registro =()=>{
     const navigate = useNavigate();
 
     const handleVolver = () => {
-        navigate(-1); // -1 para volver a la ruta anterior
+        navigate(`/`);
     };
 
 
