@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <Compras/>
     },
     {
-        path:"*",
+        path:"/:ciudad/*",
         element: <NotFound/>
     }
 ])
