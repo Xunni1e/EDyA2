@@ -1,41 +1,68 @@
 import React,{useEffect, useRef, useState} from "react"
 import { Link } from "react-router-dom"
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import "./Navbar.css"
 import OverlayCiudad from "./OverlayCiudad"
 import OverlayPerfil from "./OverlayPerfil"
 import OverlayPerfilLoggin from "./OverlayPerfilLoggin"
-const links =[
-    {
-        link:"/",
-        text: "Cartelera",
-        id:1
-
-    },
-    {
-        link:"/estrenos",
-        text: "Estrenos",
-        id:2
-
-    },
-    {
-        link:"/confiteria",
-        text: "Confiteria",
-        id:3
-
-    }
-]
 
 const Navbar =()=>{
-
     const [isCiudadOverlayOpen, setCiudadOverlayOpen] = useState(false);
     const [isPerfilOverlayOpen, setPerfilOverlayOpen] = useState(false);
     const [isPerfilLogginOverlayOpen, setPerfilLogginOverlayOpen] = useState(false);
     const [overlayPosition, setOverlayPosition] = useState({ top: 0, left: 0 });
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [text, setText] = useState("Ciudad")
-    const ciudades=["Armenia","Ibague","Barranquilla","Manizales","Bogota","Medellin","Cali","Pereira","Cucuta","Popayan","Pasto","Cartagena"]
+    const { ciudad } = useParams();
+    const [text, setText] = useState(ciudad)
+
+    const links =[
+        {
+            link:`/${ciudad}`,
+            text: "Cartelera",
+            id:1
     
+        },
+        {
+            link:`/${ciudad}/estrenos`,
+            text: "Estrenos",
+            id:2
     
+        },
+        {
+            link:`/${ciudad}/confiteria`,
+            text: "Confiteria",
+            id:3
+    
+        },
+        {
+            link:`/${ciudad}/nosotros`,
+            text: "Nosotros",
+            id:4
+    
+        }
+    ]
+    
+    const ciudades = [
+        "Armenia",
+        "Barranquilla",
+        "Bogotá",
+        "Cali",
+        "Cartagena",
+        "Cúcuta",
+        "Ibagué",
+        "Manizales",
+        "Medellín",
+        "Pasto",
+        "Pereira",
+        "Popayán"
+    ]
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleClickLogo = () => {
+        navigate(`/${ciudad}`);
+    }
 
     const handleLogin = () => {
         setIsLoggedIn(true);
@@ -46,9 +73,16 @@ const Navbar =()=>{
       };
 
 
-    const changeCity =(ciudad)=>{
-        setText(ciudad);
-    }
+      const changeCity = (ciudad) => {
+        setText(ciudad.replace(/[\u0300-\u036f]/g, ""));
+
+        const pathSegments = location.pathname.split('/');
+        if (pathSegments.length > 1 && pathSegments[1]) {
+            pathSegments[1] = ciudad.replace(/[\u0300-\u036f]/g, "");
+        }
+        
+        navigate(pathSegments.join('/'));
+    };
 
     const handleButtonClick = (event, overlayType) => {
         const buttonRect = event.target.getBoundingClientRect();
@@ -56,7 +90,7 @@ const Navbar =()=>{
             top: buttonRect.bottom,
             left: buttonRect.left,
             height: buttonRect.height,
-        });
+    });
         
         
 
@@ -68,15 +102,11 @@ const Navbar =()=>{
             setCiudadOverlayOpen(false); 
           }
         };
-
-        
-      
-
    
     return(
         <header className="barra-navegacion"> 
             <div className="contenedor-logo">
-                <h1 className="logo">CINEWAO</h1>
+                <h1 className="logo" onClick={handleClickLogo}>CINEWAO</h1>
             </div>
             
             <div className="contenedor-botones-pr">
@@ -100,8 +130,8 @@ const Navbar =()=>{
                         onClose={()=>setCiudadOverlayOpen(!isCiudadOverlayOpen)}/>}
                     </div>
                 </div>
-                <div className="icon-2">
-                    <button className="location-button-profile" onClick={(event) => {handleButtonClick, setPerfilOverlayOpen(!isPerfilOverlayOpen),setPerfilLogginOverlayOpen(!isPerfilLogginOverlayOpen) ; }} >
+                <div className="icon-2" onClick={(event) => {handleButtonClick, setPerfilOverlayOpen(!isPerfilOverlayOpen),setPerfilLogginOverlayOpen(!isPerfilLogginOverlayOpen) ; }} >
+                    <button className="location-button-profile">
                         <img src="/img/iconos/usuario.png" alt="Imagen" />
                     </button>
 

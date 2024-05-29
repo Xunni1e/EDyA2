@@ -3,9 +3,6 @@ import React, { useEffect, useRef} from 'react';
 import './OverlayCiudad.css'
 
 
-
-
-
 const OverlayCiudad=({isOpen, onClose, children, position, ciudad, changeCity})=>{
 
     const overlayRef = useRef(null);
@@ -31,7 +28,7 @@ const OverlayCiudad=({isOpen, onClose, children, position, ciudad, changeCity})=
 
     const overlayStyle={
         top: position.top +50,
-        left: position.left-160
+        left: position.left-180
     }
 
     const groupedCiudad = [];

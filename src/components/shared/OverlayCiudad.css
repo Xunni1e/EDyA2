@@ -5,11 +5,11 @@
     color: #ffffff;
     position:absolute ;
     z-index: 9999;
+    cursor: default;
   }
   
   .city-container {
     background-color: rgba(0, 0, 0, 0);
-    
     padding: 20px;
     border-radius: 10px;
   }
@@ -17,7 +17,7 @@
   .city-row {
     
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   
   .city-item {
@@ -30,10 +30,11 @@
     color: #fff;
     font-family: 'Poppins', sans-serif;
   }
+
   .horizontal-line{
     height: 2px; 
-  background-color: #ffffff;
-  margin: 0 0;
+    background-color: #ffffff;
+    margin: 0 0;
   
   }
 
@@ -44,8 +45,9 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 999; 
+    z-index: 900; 
 }
+
 .overlay-container {
     position: fixed;
     top: 0;
@@ -54,20 +56,12 @@
     height: 100%;
 }
 
-.overlay-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999; 
-}
-
 .city-overlay {
     position: absolute;
-   
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 0 solid #fff;
-    
+    border: 0 solid #fff;   
+}
+
+.city-item:hover {
+  cursor: pointer;
 }

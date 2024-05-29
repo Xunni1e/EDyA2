@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './OverlayPerfil.css'
 
 const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
@@ -9,9 +9,7 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
 
     const navigate = useNavigate();
 
-    const handleRegisterClick = () => {
-        navigate(`/registro`);
-    };
+    const { ciudad } = useParams();
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -19,25 +17,25 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
                 onClose();
             }
         };
-
-        
         document.addEventListener("mousedown", handleClickOutside);
-
-        
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [onClose]);
 
+    const handleRegisterClick = () => {
+        navigate(`/${ciudad}/registro`);
+    };
+
     const handleLoginClick = () => {
         onLogin();
-        onClose(); 
+        onClose();
     };
 
 
     const overlayStyle={
-        top: position.top +50,
-        left: position.left-160
+        top: position.top +60,
+        left: position.left -280
     }
 
 
@@ -46,8 +44,8 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
         <>
         {isOpen?(
             <div className="perfil-container">
-                <div className="perfil-overlay" style={overlayStyle} ref={overlayRef}>
-                <div className="perfil-background" onClick={onClose}/>
+                <div className="perfil-overlay" style={overlayStyle} ref={overlayRef} onClick={(event) => event.stopPropagation()}>
+                <div className="overlay-background" onClick={onClose}/>
                 <div className='inicio-session'>
                     <h2>Iniciar sesion</h2>
                 </div>
@@ -55,7 +53,7 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
                     <div className='principal'>
                         <div className="form-group">
                             <p>Correo / Usuario</p>
-                            <input type="text" id="username" placeholder="Seleccionar" />
+                            <input type="text" id="username" />
                         </div>
                         <div className="form-group">
                             <p>Contraseña</p>

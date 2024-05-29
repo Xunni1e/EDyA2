@@ -1,60 +1,31 @@
-.perfil-overlay {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    color: #fff;
-    position:absolute ;
-    z-index: 9999;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
-    
-  }
-  
-  .perfil-container {
+.perfil-container {
     background-color: rgba(0, 0, 0, 0);
     justify-items: center;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-  }
-  .overlay-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Cambia el último valor para ajustar la opacidad */
-    z-index: 999; /* Asegúrate de que el fondo esté detrás del overlay */
 }
+
 .overlay-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 .overlay-backdrop {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999; /* Asegura que el fondo esté detrás del overlay */
+    z-index: 900;
 }
 
 .perfil-overlay {
     position: absolute;
-    /* Estilos para resaltar el overlay */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border: 0;
     width: 500%;
-    
-    
-    /* Resto de estilos */
+    cursor: default;
 }
 
 .inicio-session{
@@ -64,46 +35,46 @@
     width: 100%;
     height: 100%;
     margin: 0;
-
 }
 
 .inicio-session h2{
     text-align: center;
-    margin-bottom: 20px;
-
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .form-group input[type="text"] {
-    width: 100%;
+    width: 270px;
     padding: 8px;
     border: none;
     border-radius: 3px;
     background-color: #D5C6DC;
-    color: #6a5acd;
+    color: #000000;
     font-weight: bold;
     margin-bottom: 5%;
-    
+    margin-right: 200px;
+    font-weight: 500;
   }
 
   .form-group input[type="password"] {
-    width: 100%;
+    width: 270px;
     padding: 8px;
     border: none;
     border-radius: 3px;
     background-color: #D5C6DC;
-    color: #6a5acd;
+    color: #000000;
     font-weight: bold;
     margin-bottom: 5%;
-    
-    
+    font-weight: 500;
   }
-  .form-group p{
+
+.form-group p{
     color: #000000;
     text-align: left;
     padding-bottom: 0%;
     margin: 0;
+}
 
-  }
 .principal{
     padding: 10%;
     margin: 0;
@@ -111,44 +82,61 @@
 
 .btn{
     justify-content: center;
-  background-color: #572297;
-  border: none;
-  cursor: pointer;
-  padding: 5px 10px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-  transition: background-color 0.3s ease;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-decoration: none;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.500);
-  margin: 0;
+    background-color: #572297;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.500);
+    margin-top: 4px;
+  }
+
+.btn:hover{
+    background-color: #3D0B60;
 }
+
 .pie{
     text-align: center;
     display: inline-block;
     background: #572297;
-    width: 100%;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     margin-top: 5%;
 }
 
 .forgot-password{
-    margin-top: 0;
+    margin-top: -20px;
 }
+
 .forgot-password a{
     text-decoration: none;
     color: #572297;
+    font-size: 13px;
+    margin-top: 50px;
 }
+
 .register {
     margin-top: 5%;
     text-align: center;
+    background-color: #572297;
+    cursor: pointer;
 }
+
 .register a{
     text-decoration: none;
-    color: #ffffff;
+    background-color: #572297;
+    padding: 0px;
+    margin-top: 0px;
+    font-size: 15px;
+    position: relative;
+    top: -5px;
 }
