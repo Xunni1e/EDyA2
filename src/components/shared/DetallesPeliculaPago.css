@@ -10,8 +10,8 @@
 .poster-pago {
     width: 300px;
     top: 15px;
-    left: 80px;;
-    height: auto;
+    left: 80px;
+    height: 430px;
     border-radius: 10px;
     position: absolute;
     align-self: left;
@@ -44,7 +44,7 @@
     font-size: 2em;
     font-weight: 700;
     color: #1B003A;
-    margin-bottom: -8px;
+    margin-bottom: 20px;
     width: 400px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.256);
 }
@@ -58,9 +58,9 @@
     font-size: 1.5em;
     position: absolute;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.256);
-    left: 704px;
+    left: 699px;
     right: 320px;
-    text-align: right;
+    text-align: center;
     text-justify: auto;
 }
 
@@ -83,7 +83,7 @@
 .atras-bttn {
     position: absolute;
     left: 500px;
-    top: 178px;
+    top: 177px;
     border-radius: 100px;
     width: 30px;
     height: 30px;

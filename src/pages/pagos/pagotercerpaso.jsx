@@ -4,8 +4,8 @@ import Navbar from "../../components/shared/Navbar";
 import DetallesPeliculaPago from "../../components/shared/DetallesPeliculaPago";
 import EscogerAsientos from "../../components/EscogerAsientos";
 import DetallesPago from "../../components/DetallesPago";
-import { useFuncion } from "../../hooks/useFuncion";
-import { useAsientos } from "../../hooks/useAsientos";
+import { useFuncion } from "../../../context/useFuncionContext";
+import { useAsientos } from "../../../context/useAsientosContext";
 
 const peliculas = [
     {
@@ -13,8 +13,6 @@ const peliculas = [
         titulo: "Alerta Roja",
         clasificacionEdad: "Recomendada para Mayores de 15 años",
         poster: "/img/cartelera/alerta_roja.jpg",
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 04"
     },
     {
@@ -22,8 +20,6 @@ const peliculas = [
         titulo: "Black Panther 2: Wakanda Forever",
         clasificacionEdad: "Recomendada para Mayores de 12 años",
         poster: "/img/cartelera/black_panther.jpg",
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 02"
     },
     {
@@ -31,8 +27,6 @@ const peliculas = [
         titulo: 'Avatar: El camino del agua',
         clasificacionEdad: "Recomendada para Mayores de 12 años",
         poster: '/img/cartelera/avatar.jpg',
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 07"
     },
     {
@@ -41,8 +35,6 @@ const peliculas = [
         fechaEstreno: "28 Mayo 2021",
         clasificacionEdad: "Recomendada para Mayores de 12 años",
         poster: '/img/cartelera/cruella.jpg',
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 05"
     },
     {
@@ -50,8 +42,6 @@ const peliculas = [
         titulo: 'Dune: Parte Dos',
         clasificacionEdad: "Recomendada para Mayores de 12 años",
         poster: '/img/cartelera/dune.jpg',
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 06"
     },
     {
@@ -59,8 +49,6 @@ const peliculas = [
         titulo: 'Dungeons & Dragones: Honor entre ladrones',
         clasificacionEdad: "Recomendada para Mayores de 12 años",
         poster: '/img/cartelera/d&d.jpg',
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 01"
     },
     {
@@ -68,15 +56,13 @@ const peliculas = [
         titulo: 'Civil War',
         clasificacionEdad: "Recomendada para Mayores de 12 años",
         poster: '/img/cartelera/civil_war.jpg',
-        formato: "2D - Doblado",
-        teatro: "Unicentro Cali",
         sala: "Sala 03"
     }
 ];
 
 const PagoTercerPaso = () => {
     const { total, seleccionadosFormato } = useAsientos();
-    const { selectedShowtime } = useFuncion();
+    const { selectedShowtime, formato } = useFuncion();
     const { id } = useParams();
 
     const datosPelicula = peliculas.find(p => p.id === parseInt(id));
@@ -98,19 +84,17 @@ const PagoTercerPaso = () => {
             <DetallesPeliculaPago
                 titulo={datosPelicula.titulo}
                 poster={datosPelicula.poster}
-                formato={datosPelicula.formato}
+                formato={formato}
                 sala={datosPelicula.sala}
                 clasificacionEdad={datosPelicula.clasificacionEdad}
-                teatro={datosPelicula.teatro}
                 fechaHora={selectedShowtime || 'Fecha y hora no seleccionadas'}
             />
             <EscogerAsientos/>
             <DetallesPago 
                 titulo={datosPelicula.titulo}
-                formato={datosPelicula.formato}
+                formato={formato}
                 sala={datosPelicula.sala}
                 clasificacionEdad={datosPelicula.clasificacionEdad}
-                teatro={datosPelicula.teatro}
                 poster={datosPelicula.poster}
                 fechaHora={selectedShowtime || 'Fecha y hora no seleccionadas'}
                 total={total}

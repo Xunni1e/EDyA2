@@ -5,14 +5,19 @@ const AsientosContext = createContext();
 export const AsientosProvider = ({ children }) => {
     const [cantidad, setCantidad] = useState(1);
     const [seleccionados, setSeleccionados] = useState(new Set());
-    const [total, setTotal] = useState(6000);
+    const [total, setTotal] = useState(0);
+    const [precioBoleta, setPrecioBoleta] = useState(6000);
     const [seleccionadosFormato, setSeleccionadosFormato] = useState("");
 
-    const precioBoleta = 6000;
+    const resetAsientos = () => {
+        setSeleccionados(new Set());
+        setCantidad(1);
+        setTotal(0);
+    };
 
     useEffect(() => {
         setTotal(cantidad * precioBoleta);
-    }, [cantidad]);
+    }, [cantidad, precioBoleta]);
 
     const ordenarAsientos = (a, b) => {
         const filaA = a[0];
@@ -48,7 +53,7 @@ export const AsientosProvider = ({ children }) => {
     };
 
     return (
-        <AsientosContext.Provider value={{ cantidad, incrementarCantidad, decrementarCantidad, seleccionados, seleccionadosFormato, seleccionarAsiento, total }}>
+        <AsientosContext.Provider value={{ cantidad, incrementarCantidad, decrementarCantidad, seleccionados, seleccionadosFormato, seleccionarAsiento, total, setPrecioBoleta, resetAsientos }}>
             {children}
         </AsientosContext.Provider>
     );

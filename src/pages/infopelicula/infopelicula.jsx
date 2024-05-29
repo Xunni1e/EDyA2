@@ -6,7 +6,7 @@ import DetallesPelicula from "../../components/DetallesPelicula";
 import Teatro from "../../components/Teatro";
 import "./infopelicula.css";
 
-const peliculasDB = [
+export const peliculasDB = [
     {
         id: 1,
         titulo: "Alerta Roja",
@@ -22,7 +22,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/_L0DMAFBEjs",
         funciones: {
-          unicentro: ['10:00 AM', '11:40 AM', '3:00 PM', '6:50 PM', '9:35 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     },
     {
@@ -40,7 +111,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/BPjbiZQmBI4",
         funciones: {
-          unicentro: ['9:20 AM', '12:50 AM', '1:30 PM', '3:10 PM', '10:40 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     },
     {
@@ -58,7 +200,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/a8Gx8wiNbs8",
         funciones: {
-          unicentro: ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     },
     {
@@ -76,7 +289,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/gmRKv7n2If8",
         funciones: {
-          unicentro: ['10:20 AM', '1:45 PM', '4:55 PM', '8:10 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     },
     {
@@ -94,7 +378,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/pMe_te9QUa0",
         funciones: {
-          unicentro: ['11:00 AM', '2:00 PM', '5:00 PM', '7:40 PM', '10:15 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     },
     {
@@ -112,7 +467,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/Q6nCZDpvA9k",
         funciones: {
-          unicentro: ['10:30 AM', '1:00 PM', '4:00 PM', '6:30 PM', '9:00 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     },
     {
@@ -130,7 +556,78 @@ const peliculasDB = [
         idioma: "Inglés",
         trailerUrl: "https://youtu.be/aDyQxtg0V2w",
         funciones: {
-          unicentro: ['9:50 AM', '12:50 PM', '3:50 PM', '7:00 PM', '10:00 PM']
+          "Cali": {
+            "Unicentro": {
+              "2D": ['10:20 AM', '11:50 AM', '2:40 PM', '4:10 PM', '9:50 PM'],
+              "3D": ['10:40 AM', '11:15 AM', '1:50 PM', '4:35 PM', '10:20 PM']
+            }
+          },
+          "Bogotá": {
+            "Andino": {
+              "2D": ['10:10 AM', '12:00 PM', '3:00 PM', '5:10 PM', '8:00 PM'],
+              "3D": ['10:30 AM', '12:45 PM', '3:30 PM', '6:00 PM', '9:00 PM']
+            }
+          },
+          "Medellín": {
+            "Santafé": {
+              "2D": ['9:50 AM', '12:10 PM', '3:20 PM', '5:40 PM', '8:30 PM'],
+              "3D": ['10:00 AM', '1:00 PM', '4:00 PM', '6:20 PM', '9:20 PM']
+            }
+          },
+          "Barranquilla": {
+            "Buenavista": {
+              "2D": ['10:30 AM', '1:20 PM', '4:00 PM', '6:30 PM', '9:10 PM'],
+              "3D": ['11:00 AM', '2:00 PM', '4:50 PM', '7:20 PM', '10:00 PM']
+            }
+          },
+          "Cartagena": {
+            "Caribe Plaza": {
+              "2D": ['10:15 AM', '1:10 PM', '3:50 PM', '6:10 PM', '8:45 PM'],
+              "3D": ['10:45 AM', '1:30 PM', '4:10 PM', '7:00 PM', '9:40 PM']
+            }
+          },
+          "Armenia": {
+            "Portal Quindío": {
+              "2D": ['10:05 AM', '12:50 PM', '3:40 PM', '6:15 PM', '9:05 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:05 PM', '6:50 PM', '9:35 PM']
+            }
+          },
+          "Ibagué": {
+            "La Estación": {
+              "2D": ['9:55 AM', '12:45 PM', '3:35 PM', '6:10 PM', '8:55 PM'],
+              "3D": ['10:15 AM', '1:05 PM', '3:55 PM', '6:40 PM', '9:25 PM']
+            }
+          },
+          "Manizales": {
+            "Fundadores": {
+              "2D": ['10:00 AM', '12:40 PM', '3:30 PM', '6:05 PM', '8:50 PM'],
+              "3D": ['10:20 AM', '1:00 PM', '3:50 PM', '6:35 PM', '9:20 PM']
+            }
+          },
+          "Pasto": {
+            "Único": {
+              "2D": ['10:10 AM', '1:00 PM', '3:45 PM', '6:20 PM', '9:10 PM'],
+              "3D": ['10:30 AM', '1:20 PM', '4:05 PM', '6:50 PM', '9:40 PM']
+            }
+          },
+          "Pereira": {
+            "Victoria": {
+              "2D": ['9:50 AM', '12:30 PM', '3:15 PM', '5:50 PM', '8:35 PM'],
+              "3D": ['10:10 AM', '12:55 PM', '3:40 PM', '6:15 PM', '9:00 PM']
+            }
+          },
+          "Popayán": {
+            "Campanario": {
+              "2D": ['10:05 AM', '12:55 PM', '3:45 PM', '6:30 PM', '9:15 PM'],
+              "3D": ['10:25 AM', '1:15 PM', '4:00 PM', '6:45 PM', '9:30 PM']
+            }
+          },
+          "Cúcuta": {
+            "Ventura Plaza": {
+              "2D": ['10:00 AM', '12:45 PM', '3:30 PM', '6:00 PM', '8:45 PM'],
+              "3D": ['10:20 AM', '1:05 PM', '3:50 PM', '6:30 PM', '9:15 PM']
+            }
+          }
         }
     }
 ];

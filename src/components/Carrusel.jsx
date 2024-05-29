@@ -15,7 +15,10 @@ const Carrusel = ({ imagenes }) => {
             slidesPerView={'4.2'}
             centeredSlides={true}
             loop={true}
+            loopFillGroupWithBlank={true}
             navigation={false}
+            preloadImages={true}
+            updateOnImagesReady={true}
             autoplay={{
                 delay: 2000,
                 disableOnInteraction: false,

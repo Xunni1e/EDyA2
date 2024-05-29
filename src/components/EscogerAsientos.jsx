@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAsientos } from '../hooks/useAsientos';
+import { useAsientos } from '../../context/useAsientosContext';
 import './EscogerAsientos.css';
 
 const filas = ['A', 'B', 'C', 'D', 'E', 'F'];
