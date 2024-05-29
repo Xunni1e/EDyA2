@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import PeliculaCard from '../../components/shared/PeliculaCard';
 import Carrusel from '../../components/Carrusel.jsx';
 import Navbar from '../../components/shared/Navbar.jsx';
@@ -24,8 +24,10 @@ const Cartelera = () => {
 
     const imagenesCarrusel = peliculas.map(pelicula => pelicula.imagen);
 
+    const { ciudad } = useParams();
+
     const handleCardClick = (id) => {
-        navigate(`/pelicula/${id}`);
+        navigate(`/${ciudad}/pelicula/${id}`);
     };
     
     return (
@@ -37,7 +39,7 @@ const Cartelera = () => {
             <div className="cartelera-header">
                 <h2 className="cartelera-titulo">
                     <span className="cartelera">CARTELERA</span>
-                    <span className="cali"> CALI</span>
+                    <span className="cali"> {ciudad.toUpperCase()}</span>
                 </h2>
                 <div className="cartelera-linea"></div>
             </div>

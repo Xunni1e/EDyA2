@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
+import { useFuncion } from "../../../context/useFuncionContext";
 import Navbar from "../../components/shared/Navbar";
 import DetallesPeliculaPago from "../../components/shared/DetallesPeliculaPago";
 import MetodoPago from "../../components/MetodoPago";
@@ -10,8 +11,6 @@ const peliculas = [
       titulo: "Alerta Roja",
       clasificacionEdad: "Recomendada para Mayores de 15 años",
       poster: "/img/cartelera/alerta_roja.jpg",
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
       sala: "Sala 04"
   },
   {
@@ -19,8 +18,6 @@ const peliculas = [
       titulo: "Black Panther 2: Wakanda Forever",
       clasificacionEdad: "Recomendada para Mayores de 12 años",
       poster: "/img/cartelera/black_panther.jpg",
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
       sala: "Sala 02"
   },
   {
@@ -28,8 +25,6 @@ const peliculas = [
       titulo: 'Avatar: El camino del agua',
       clasificacionEdad: "Recomendada para Mayores de 12 años",
       poster: '/img/cartelera/avatar.jpg',
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
       sala: "Sala 07"
   },
   {
@@ -38,8 +33,6 @@ const peliculas = [
       fechaEstreno: "28 Mayo 2021",
       clasificacionEdad: "Recomendada para Mayores de 12 años",
       poster: '/img/cartelera/cruella.jpg',
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
       sala: "Sala 05"
   },
   {
@@ -47,8 +40,6 @@ const peliculas = [
       titulo: 'Dune: Parte Dos',
       clasificacionEdad: "Recomendada para Mayores de 12 años",
       poster: '/img/cartelera/dune.jpg',
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
       sala: "Sala 06"
   },
   {
@@ -56,17 +47,13 @@ const peliculas = [
       titulo: 'Dungeons & Dragones: Honor entre ladrones',
       clasificacionEdad: "Recomendada para Mayores de 12 años",
       poster: '/img/cartelera/d&d.jpg',
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
       sala: "Sala 01"
   },
   {
       id: 7,
       titulo: 'Civil War',
       clasificacionEdad: "Recomendada para Mayores de 12 años",
-      poster: '/img/cartelera/civil_war.jpeg',
-      formato: "2D - Doblado",
-      teatro: "Unicentro Cali",
+      poster: '/img/cartelera/civil_war.jpg',
       sala: "Sala 03"
   }
 ];
@@ -78,6 +65,7 @@ const PagoPrimerPaso = () => {
 
   const location = useLocation();
   const { selectedShowtime } = location.state || {};
+  const { formato } = useFuncion();
 
   const { id } = useParams();
 
@@ -100,10 +88,9 @@ const PagoPrimerPaso = () => {
       <DetallesPeliculaPago
         titulo={datosPelicula.titulo}
         poster={datosPelicula.poster}
-        formato={datosPelicula.formato}
+        formato={formato}
         sala={datosPelicula.sala}
         clasificacionEdad={datosPelicula.clasificacionEdad}
-        teatro={datosPelicula.teatro}
         fechaHora={selectedShowtime || 'Fecha y hora no seleccionadas'}
       />
       <MetodoPago/>

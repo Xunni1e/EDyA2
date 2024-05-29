@@ -1,4 +1,4 @@
-.teatro-container {
+  .teatro-container {
     background-color: #D5C6DC;
     padding: 20px;
     border-radius: 8px;
@@ -39,19 +39,67 @@
     margin-bottom: 20px;
     position: absolute;
     top: -90px;
-    left: 125px;
+    left: 59px;
+  }
+
+  .backDate {
+    background: #572297;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    min-width: 65px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.594);
+  }
+
+  .backDate:hover {
+    background-color: #1B003A;
+  }
+
+  .backDate:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+
+  .atras-img-date {
+    position: relative;
+    width: 20px;
+  }
+
+  .siguiente-img-date {
+    position: relative;
+    width: 20px;
+  }
+
+  .nextDate:hover {
+    background-color: #1B003A;
+  }
+
+  .nextDate {
+    background: #572297;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    min-width: 65px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.594);
   }
 
   .num{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 21px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.568);
   }
 
   .dia{
     font-family: 'Lato', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 12px;
     font-weight: lighter;
   }
@@ -138,11 +186,11 @@
 
   .formato {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     background-color: white;
     border-color: #ffffff00;
     border-width: 2px;
-    height: 100x;
+    height: 245Px;
     top: 102.5px;
     width: 600.8px;
     padding: 20px;
@@ -153,5 +201,10 @@
     left: -0.51px;
     position: absolute;
     box-shadow: inset rgba(0, 0, 0, 0.519) 0px 0px 5px 0px, rgba(0, 0, 0, 0.07) 0px 30px 100px -24px;
+  }
+
+  .dimension {
+    font-size: 18px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.256);
   }
   

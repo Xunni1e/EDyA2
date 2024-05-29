@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAsientos } from '../hooks/useAsientos';
+import { useAsientos } from '../../context/useAsientosContext';
 import './CantidadAsientos.css';
 
 const CantidadAsientos = () => {

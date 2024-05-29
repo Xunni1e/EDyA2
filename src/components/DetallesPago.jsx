@@ -1,11 +1,18 @@
 import React from 'react';
-import { useAsientos } from '../hooks/useAsientos';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { peliculasDB } from '../pages/infopelicula/infopelicula';
+import { useAsientos } from '../../context/useAsientosContext';
 import "./DetallesPago.css";
 
-const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, teatro, fechaHora, poster }) => {
+const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHora, poster }) => {
     const { seleccionadosFormato } = useAsientos()
     const navigate = useNavigate();
+
+    const { id, ciudad } = useParams();
+    const { resetAsientos } = useAsientos();
+
+    const pelicula = peliculasDB.find(p => p.id === parseInt(id));
+    const teatro = pelicula && pelicula.funciones && pelicula.funciones[ciudad] ? Object.keys(pelicula.funciones[ciudad])[0] : 'Teatro no definido';
 
     const handlePagar = () => {
         const nuevaCompra = {
@@ -15,7 +22,7 @@ const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, teatro,
             formato: formato,
             sala: sala,
             clasificacionEdad: clasificacionEdad,
-            teatro: teatro,
+            teatro: teatro + " " + ciudad,
             fechaHora: fechaHora,
             poster: poster,
             numeroTransaccion: numeroTransaccion
@@ -25,7 +32,9 @@ const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, teatro,
         compras.push(nuevaCompra);
         localStorage.setItem('compras', JSON.stringify(compras));
 
-        navigate('/compras');
+        resetAsientos();
+
+        navigate(`/${ciudad}/compras`);
     };
 
     var numeroTransaccion = 0;

@@ -1,23 +1,27 @@
 import React from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { peliculasDB } from '../../pages/infopelicula/infopelicula';
 import './DetallesPeliculaPago.css';
 
-const DetallesPeliculaPago = ({ titulo, poster, formato, sala, clasificacionEdad, teatro, fechaHora }) => {
+const DetallesPeliculaPago = ({ titulo, poster, formato, sala, clasificacionEdad, fechaHora }) => {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { id, ciudad } = useParams();
   const paso = useLocation().pathname.split('/').pop();
   const pasoNumero = parseInt(paso.split('-')[1]);
+
+  const pelicula = peliculasDB.find(p => p.id === parseInt(id));
+  const teatro = pelicula && pelicula.funciones && pelicula.funciones[ciudad] ? Object.keys(pelicula.funciones[ciudad])[0] : 'Teatro no definido';
 
   const handleNavigation = (direction) => {
     if (direction === 'back') {
       if (pasoNumero === 1) {
-        navigate(`/pelicula/${id}`);
+        navigate(`/${ciudad}/pelicula/${id}`);
       } else {
-        navigate(`/pelicula/${id}/pago-${pasoNumero - 1}`);
+        navigate(`/${ciudad}/pelicula/${id}/pago-${pasoNumero - 1}`);
       }
     } else {
       if (pasoNumero < 3) {
-        navigate(`/pelicula/${id}/pago-${pasoNumero + 1}`);
+        navigate(`/${ciudad}/pelicula/${id}/pago-${pasoNumero + 1}`);
       }
     }
   };
@@ -33,7 +37,7 @@ const DetallesPeliculaPago = ({ titulo, poster, formato, sala, clasificacionEdad
           <p>{clasificacionEdad}</p>
           <p>{fechaHora}</p>
           <p>{formato}</p>
-          <p>{teatro}</p>
+          <p>{`${teatro} ${ciudad}`}</p>
           <p>{sala}</p>
         </div>
       </div>
