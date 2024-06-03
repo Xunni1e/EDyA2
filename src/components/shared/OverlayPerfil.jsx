@@ -1,11 +1,47 @@
 
-import React, { useEffect, useRef} from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useRef, useState} from 'react';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { doSignInWithEmailAndPassword } from '../../firebase/auth';
+import { useAuth } from '../../../context/authContext';
 import './OverlayPerfil.css'
+import { set } from 'firebase/database';
+
 
 const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
 
+
+    const{userLogginIn} = useAuth()
+
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const [isSigningIn,setIsSigningIn] = useState(false)
+    const [mensajeError,setmMensajeError] = useState("")
     const overlayRef = useRef(null);
+    
+
+    const handleLogin = async (e) => {
+        e.preventDefault()
+
+        if(!email || !password){
+            setmMensajeError("Porfavor rellenar todos los campos")
+        }
+
+        
+
+        if(!isSigningIn){
+            try{
+                setIsSigningIn(true)
+                await doSignInWithEmailAndPassword(email,password)
+                onClose();
+            }catch(error){
+                alert(error.message)
+            }
+            
+            
+        }
+        
+        
+    }
 
     const navigate = useNavigate();
 
@@ -27,12 +63,6 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
         navigate(`/${ciudad}/registro`);
     };
 
-    const handleLoginClick = () => {
-        onLogin();
-        onClose();
-    };
-
-
     const overlayStyle={
         top: position.top +60,
         left: position.left -280
@@ -49,17 +79,17 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
                 <div className='inicio-session'>
                     <h2>Iniciar sesion</h2>
                 </div>
-                <form>
+                <form onSubmit={handleLogin}>
                     <div className='principal'>
                         <div className="form-group">
                             <p>Correo / Usuario</p>
-                            <input type="text" id="username" />
+                            <input type="email" id="username" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
                         </div>
                         <div className="form-group">
                             <p>Contraseña</p>
-                            <input type="password" id="password" />
+                            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
                         </div>
-                        <button type="submit" className="btn" onClick={handleLoginClick}>Acceder</button>
+                        <button type="submit" className="btn">Acceder</button>
                     </div>
                 </form>
                 <div className="forgot-password">
@@ -70,7 +100,7 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
                         <a onClick={handleRegisterClick}>¿No estás registrado? Regístrate aquí</a> 
                     </div>
                 </div>
-                
+                {mensajeError && <div className="error-message">{mensajeError}</div>}
                 {children}
                 </div>
                 <div className="overlay-backdrop" onClick={onClose}/>

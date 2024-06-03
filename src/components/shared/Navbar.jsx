@@ -5,7 +5,7 @@ import "./Navbar.css"
 import OverlayCiudad from "./OverlayCiudad"
 import OverlayPerfil from "./OverlayPerfil"
 import OverlayPerfilLoggin from "./OverlayPerfilLoggin"
-
+import { useAuth } from "../../../context/authContext";
 const Navbar =()=>{
     const [isCiudadOverlayOpen, setCiudadOverlayOpen] = useState(false);
     const [isPerfilOverlayOpen, setPerfilOverlayOpen] = useState(false);
@@ -14,7 +14,7 @@ const Navbar =()=>{
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { ciudad } = useParams();
     const [text, setText] = useState(ciudad)
-
+    const {currentUser} = useAuth();
     const links =[
         {
             link:`/${ciudad}`,
@@ -135,10 +135,10 @@ const Navbar =()=>{
                         <img src="/img/iconos/usuario.png" alt="Imagen" />
                     </button>
 
-                    {!isLoggedIn && overlayPosition && <OverlayPerfil position={overlayPosition} isOpen={isPerfilOverlayOpen}
+                    {!currentUser && overlayPosition && <OverlayPerfil position={overlayPosition} isOpen={isPerfilOverlayOpen}
                         onClose={()=>setPerfilOverlayOpen(!isPerfilOverlayOpen)} onLogin={handleLogin}/>}
                         
-                    {isLoggedIn && overlayPosition && <OverlayPerfilLoggin position={overlayPosition} isOpen={isPerfilLogginOverlayOpen}
+                    {currentUser && overlayPosition && <OverlayPerfilLoggin position={overlayPosition} isOpen={isPerfilLogginOverlayOpen}
                         onClose={()=>setPerfilLogginOverlayOpen(!isPerfilLogginOverlayOpen)} onLogout={handleLogout} />}
                 </div>
             </div>

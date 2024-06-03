@@ -1,10 +1,10 @@
 import React from 'react';
 
-const DatePicker = ({ label, style, ...props }) => {
+const DatePicker = ({ label, value, onChange, style }) => {
   return (
-    <div >
+    <div>
       <label>{label}</label>
-      <input type="date" {...props} style={style}/>
+      <input type="date" value={value} onChange={onChange} style={style} />
     </div>
   );
 };
