@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 const ShowtimeContext = createContext();
 
 export const ShowtimeProvider = ({ children }) => {
-  const [seleccionadosFormato, setSeleccionadosFormato] = useState("");
+  const [selectedShowtime, formato] = useState("");
 
   const [showtimeInfo, setShowtimeInfo] = useState({
     selectedShowtime: null,

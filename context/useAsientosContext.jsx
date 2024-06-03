@@ -12,7 +12,7 @@ export const AsientosProvider = ({ children }) => {
     const resetAsientos = () => {
         setSeleccionados(new Set());
         setCantidad(1);
-        setTotal(0);
+        setTotal((cantidad * precioBoleta));
     };
 
     useEffect(() => {
