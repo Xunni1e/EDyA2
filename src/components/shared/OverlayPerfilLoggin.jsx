@@ -18,25 +18,23 @@ const OverlayPerfilLoggin=({isOpen, onClose, children, position, onLogout})=>{
     const [user, setUser] = useState(null);
     const [userInfo, setUserInfo] = useState({});
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-            if (currentUser) {
-            setUser(currentUser);
-
-        // Obtener datos adicionales del usuario desde Firestore
-        const userDoc = await getDoc(doc(db, "Users", currentUser.uid));
-            if (userDoc.exists()) {
-            setUserInfo(userDoc.data());
-        }
-        } else {
-            setUser(null);
-        }
-        });
-        console.log(userInfo.firstName)
-        console.log(userInfo.lastName)
-    return () => unsubscribe();
-    }, []);
-    
+    const [userDetails, setUserDetails] = useState(null)
+    const fetchUserData = async () => {
+        auth.onAuthStateChanged(async (user)=>{
+            console.log(user);
+            const docRef = doc(db, "Users", user.uid);
+            const docSnap = await getDoc(docRef);
+            if(docSnap.exists()){
+                setUserDetails(docSnap.data())
+                console.log(docSnap.data())
+            }else{
+                console.log("Usuario no logueado")
+            }
+        } )
+    }
+    useEffect(()=>{
+        fetchUserData()
+    },[])
 
     const handleClickCompras = () => {
         navigate(`/${ciudad}/compras`);
@@ -80,8 +78,9 @@ const OverlayPerfilLoggin=({isOpen, onClose, children, position, onLogout})=>{
                 <div className="perfil-overlay" style={overlayStyle} ref={overlayRef} onClick={(event) => event.stopPropagation()}>
                     <div className="perfil-background" onClick={onClose}/>
                     <div className='inicio-session-loggin'>
-                        <h2>{userInfo.firstName} {userInfo.lastName}</h2>
-                        <p>{user.email}</p>
+                        <h2>{userDetails.firstName}</h2>
+                        <h2> {userDetails.lastName}</h2>
+                        <p>{userDetails.email}</p>
                     </div>
                     <div className='principal-loggin'>
                         <button type="submit" className="btn" onClick={handleClickCompras}>Mis Compras</button>

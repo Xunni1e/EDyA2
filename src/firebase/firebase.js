@@ -16,14 +16,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore();
-
-setPersistence(auth, browserSessionPersistence)
-  .then(() => {
-    console.log("Persistencia de sesión configurada");
-  })
-  .catch((error) => {
-    console.error("Error al configurar la persistencia de sesión:", error);
-  });
-
+const db = getFirestore(app);
 export {app, auth, db}

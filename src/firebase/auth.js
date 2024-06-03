@@ -1,7 +1,7 @@
 import { auth, db } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, doc, setDoc, addDoc, collection } from "firebase/firestore";
+import { getFirestore, doc, updateDoc, arrayUnion, setDoc, addDoc, collection } from "firebase/firestore";
 
     
 
@@ -28,3 +28,20 @@ export const getUserData = async (uid) => {
         throw error;
     }
 }
+
+export async function agregarCompra(uid, nuevaCompra) {
+    try {
+      // Obtenemos una referencia al documento del usuario utilizando su UID
+      const userRef = doc(db, "Users", uid);
+  
+      // Actualizamos el subdocumento de "compras" del usuario agregando la nueva compra
+      await updateDoc(userRef, {
+        compras: arrayUnion(nuevaCompra)
+      });
+      
+      console.log("Compra agregada correctamente a las compras del usuario");
+    } catch (error) {
+      console.error("Error al agregar la compra a las compras del usuario:", error);
+    }
+  }
+  

@@ -3,6 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { peliculasDB } from '../pages/infopelicula/infopelicula';
 import { useAsientos } from '../../context/useAsientosContext';
 import "./DetallesPago.css";
+import { db } from '../firebase/firebase';
+import { doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { agregarCompra } from '../firebase/auth';
+import { auth } from '../firebase/firebase';
 
 const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHora, poster }) => {
     const { seleccionadosFormato } = useAsientos()
@@ -14,7 +18,7 @@ const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHo
     const pelicula = peliculasDB.find(p => p.id === parseInt(id));
     const teatro = pelicula && pelicula.funciones && pelicula.funciones[ciudad] ? Object.keys(pelicula.funciones[ciudad])[0] : 'Teatro no definido';
 
-    const handlePagar = () => {
+    const handlePagar = async () => {
         const nuevaCompra = {
             titulo: titulo,
             total: total,
@@ -27,7 +31,14 @@ const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHo
             poster: poster,
             numeroTransaccion: numeroTransaccion
         };
-
+        const user = auth.currentUser;
+        try {
+            await agregarCompra(user.uid, nuevaCompra); // Reemplaza uid_usuario_actual por el UID del usuario actual
+            console.log("Compra agregada correctamente a la base de datos");
+        } catch (error) {
+            console.error("Error al agregar la compra a la base de datos:", error);
+        }
+        
         const compras = JSON.parse(localStorage.getItem('compras')) || [];
         compras.push(nuevaCompra);
         localStorage.setItem('compras', JSON.stringify(compras));
