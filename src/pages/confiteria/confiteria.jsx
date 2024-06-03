@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "../../components/shared/Navbar";
 import './confiteria.css';
+import React, { useEffect } from 'react';
 
 const productos = [
     { id: 1, imagen: '/img/confiteria/Crispetas.png', nombre: 'CRISPETAS GRANDES', precio: '$8000' },
@@ -12,7 +13,7 @@ const productos = [
     { id: 7, imagen: '/img/confiteria/nachos.png', nombre: 'NACHOS', precio: '$6000' }
   ];
 
-const Confiteria =()=>{
+const Confiteria = () => { 
 
     useEffect(() => {
         window.scrollTo(0, 0);
