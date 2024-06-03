@@ -87,7 +87,7 @@ const OverlayPerfil=({isOpen, onClose, children, position, onLogin})=>{
                         </div>
                         <div className="form-group">
                             <p>Contraseña</p>
-                            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
+                            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Contraseña'/>
                         </div>
                         <button type="submit" className="btn">Acceder</button>
                     </div>
