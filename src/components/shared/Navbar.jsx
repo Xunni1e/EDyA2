@@ -30,7 +30,7 @@ const Navbar =()=>{
         },
         {
             link:`/${ciudad}/confiteria`,
-            text: "Confiteria",
+            text: "Confitería",
             id:3
     
         },
