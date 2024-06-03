@@ -32,7 +32,7 @@ const Confiteria =()=>{
           <div key={producto.id} className="producto">
             <img src={producto.imagen} alt='Imagen del producto' className="producto-imagen" />
             <h3 className="producto-nombre">{producto.nombre}</h3>
-            <p className="producto-precio">${producto.precio.toFixed(2)}</p>
+            <p className="producto-precio">{producto.precio}</p>
           </div>
         ))}
             </div>
