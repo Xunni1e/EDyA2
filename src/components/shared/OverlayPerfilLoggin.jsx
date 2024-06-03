@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState} from 'react';
 import './OverlayPerfilLoggin.css'
 import { useNavigate, useParams } from 'react-router-dom';
@@ -78,8 +77,7 @@ const OverlayPerfilLoggin=({isOpen, onClose, children, position, onLogout})=>{
                 <div className="perfil-overlay" style={overlayStyle} ref={overlayRef} onClick={(event) => event.stopPropagation()}>
                     <div className="perfil-background" onClick={onClose}/>
                     <div className='inicio-session-loggin'>
-                        <h2>{userDetails.firstName}</h2>
-                        <h2> {userDetails.lastName}</h2>
+                        <h2>{userDetails.firstName} {userDetails.lastName}</h2>
                         <p>{userDetails.email}</p>
                     </div>
                     <div className='principal-loggin'>

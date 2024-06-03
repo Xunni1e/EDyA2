@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfileCard.css'; // Asegúrate de crear este archivo CSS para estilizar las tarjetas
+import './ProfileCard.css';
 
 const ProfileCard = ({ image, name, role }) => {
   return (

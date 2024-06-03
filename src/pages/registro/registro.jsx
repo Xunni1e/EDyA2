@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import Navbar from "../../components/shared/Navbar"
 import FormInput from "../../components/shared/FormInput"
 import Select from "../../components/shared/Select"
@@ -13,8 +14,33 @@ import { doc, setDoc } from "firebase/firestore";
 const Registro =()=>{
     
     const documentTypes = ['Cédula', 'Pasaporte', 'Otro'];
-    const cities = ['Bogotá', 'Medellín', 'Cali', 'Barranquilla'];
-    const departments = ['Cundinamarca', 'Antioquia', 'Valle del cauca', 'Atlantico'];
+    const cities = [
+        'Seleccione una opción', 'Bogotá', 'Medellín', 'Cali', 'Barranquilla', 'Cartagena', 'Cúcuta', 'Bucaramanga', 
+        'Pereira', 'Manizales', 'Armenia', 'Ibagué', 'Neiva', 'Pasto', 'Popayán', 'Montería', 
+        'Villavicencio', 'Tunja', 'Riohacha', 'Santa Marta', 'Valledupar', 'Sincelejo', 
+        'San Andrés', 'Florencia', 'Leticia', 'Mocoa', 'Puerto Inírida', 'San José del Guaviare', 
+        'Mitú', 'Arauca', 'Yopal', 'Quibdó'
+    ];
+
+    const departments = [
+        'Seleccione una opción', 'Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bogotá D.C.', 'Bolívar', 'Boyacá', 'Caldas', 
+        'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó', 'Córdoba', 'Cundinamarca', 'Guainía', 
+        'Guaviare', 'Huila', 'La Guajira', 'Magdalena', 'Meta', 'Nariño', 'Norte de Santander', 
+        'Putumayo', 'Quindío', 'Risaralda', 'San Andrés y Providencia', 'Santander', 'Sucre', 
+        'Tolima', 'Valle del Cauca', 'Vaupés', 'Vichada'
+    ];
+
+    const estilos = {
+        width: '95.9%',
+        padding: '8px',
+        border: 'none',
+        borderRadius: '3px',
+        backgroundColor: '#D5C6DC',
+        color: '#000',
+        fontWeight: '400',
+        fontSize: '12px',
+        marginBottom: '3%',
+    };
 
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
@@ -29,23 +55,44 @@ const Registro =()=>{
     const [city, setCity] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
+    const [selectedCity, setSelectedCity] = useState('');
+    const [selectedDepartment, setSelectedDepartment] = useState('');
+    const [isFormValid, setIsFormValid] = useState(false);
    
-
-    
-    const estilos = {
-        width: '100%',
-        padding: '8px',
-        border: 'none',
-        borderRadius: '3px',
-        backgroundColor: '#D5C6DC',
-        color: '#000',
-        fontWeight: 'bold',
-        marginBottom: '3%'
-    }
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const isValid = 
+            selectedCity !== '' && selectedCity !== 'Seleccione una opción' &&
+            selectedDepartment !== '' && selectedDepartment !== 'Seleccione una opción' &&
+            birthDate;
+        setIsFormValid(isValid);
+    }, [selectedCity, selectedDepartment, birthDate]);
+
+    const handleSelectChange = (e) => {
+        const { name, value } = e.target;
+        if (name === 'city') {
+            setSelectedCity(value);
+            setCity(value);
+        } else if (name === 'department') {
+            setSelectedDepartment(value);
+            setDepartment(value);
+        }
+        validateForm();
+    };
+
+    const handleDateChange = (e) => {
+        const newDate = e.target.value;
+        setBirthDate(newDate);
+        validateForm();
+    };;
+
     const handleVolver = () => {
-        navigate(`/`);
+        if (isFormValid) {
+            navigate(`/`);
+        } else {
+            alert("Debe llenar todos los campos.");
+        }
     };
 
     const formatDateForFirestore = (date) => {
@@ -110,17 +157,17 @@ const Registro =()=>{
                 <FormInput label="Nombres" value={firstName} onChange={(e) => setFirstName(e.target.value)} style={estilos} />
                 <FormInput label="Apellidos" value={lastName} onChange={(e) => setLastName(e.target.value)} style={estilos} />
                 <div className="contenedor-doble">
-                    <Select label="Documento de Identidad" options={documentTypes} value={documentType} onChange={(e) => setDocumentType(e.target.value)} className="doble" style={estilos} />
-                    <FormInput type="text" value={documentId} onChange={(e) => setDocumentId(e.target.value)} className="doble" style={estilos} />
+                    <Select label="Tipo de documento" options={documentTypes} value={documentType} onChange={(e) => setDocumentType(e.target.value)} className="doble" style={estilos} />
+                    <FormInput label="Número de identificación" type="text" value={documentId} onChange={(e) => setDocumentId(e.target.value)} className="doble" style={estilos} />
                 </div>
-                <DatePicker label="Fecha de nacimiento" type = "date" value={birthDate} onChange={(date) => setBirthDate(date.target.value)} style={estilos} />
+                <DatePicker label="Fecha de nacimiento" type="date" value={birthDate} onChange={handleDateChange} style={estilos} />
                 <div className="contenedor-doble">
-                    <Select label="Departamento" options={departments} value={department} onChange={(e) => setDepartment(e.target.value)} className="doble" style={estilos} />
-                    <Select label="Ciudad de residencia" options={cities} value={city} onChange={(e) => setCity(e.target.value)} className="doble" style={estilos} />
+                    <Select label="Departamento" name="department" options={departments} value={department} onChange={handleSelectChange} className="doble" style={estilos} />
+                    <Select label="Ciudad" name="city" options={cities} value={city} onChange={handleSelectChange} className="doble" style={estilos} />
                 </div>
                 <FormInput label="Dirección" value={address} onChange={(e) => setAddress(e.target.value)} style={estilos} />
                 <FormInput label="Teléfono" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} style={estilos} />
-                <button type="submit" className="btn-register">Registrarme</button>
+                <button type="submit" className="btn-register" onClick={handleVolver}>Registrarme</button>
             </form>
         </div>
     </>
