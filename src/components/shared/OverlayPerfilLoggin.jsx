@@ -1,19 +1,47 @@
 
-import React, { useEffect, useRef} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import './OverlayPerfilLoggin.css'
 import { useNavigate, useParams } from 'react-router-dom';
-
-
+import { doSignOut } from '../../firebase/auth';
+import { useAuth } from '../../../context/authContext';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getUserData } from '../../firebase/auth';
+import firebase from 'firebase/compat/app';
+import { db,auth } from "../../firebase/firebase";
+import { getDoc, doc } from 'firebase/firestore';
 const OverlayPerfilLoggin=({isOpen, onClose, children, position, onLogout})=>{
 
     const navigate = useNavigate();
 
     const { ciudad } = useParams();
 
+    const [user, setUser] = useState(null);
+    const [userInfo, setUserInfo] = useState({});
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+            if (currentUser) {
+            setUser(currentUser);
+
+        // Obtener datos adicionales del usuario desde Firestore
+        const userDoc = await getDoc(doc(db, "Users", currentUser.uid));
+            if (userDoc.exists()) {
+            setUserInfo(userDoc.data());
+        }
+        } else {
+            setUser(null);
+        }
+        });
+        console.log(userInfo.firstName)
+        console.log(userInfo.lastName)
+    return () => unsubscribe();
+    }, []);
+    
+
     const handleClickCompras = () => {
         navigate(`/${ciudad}/compras`);
     }
-
+    const {userLoggedIn} = useAuth()
     const overlayRef = useRef(null);
 
        
@@ -34,7 +62,7 @@ const OverlayPerfilLoggin=({isOpen, onClose, children, position, onLogout})=>{
         }, [onClose]);
 
         const handleLogoutClick = () => {
-            onLogout(); 
+            doSignOut();
             onClose(); 
         };
 
@@ -52,8 +80,8 @@ const OverlayPerfilLoggin=({isOpen, onClose, children, position, onLogout})=>{
                 <div className="perfil-overlay" style={overlayStyle} ref={overlayRef} onClick={(event) => event.stopPropagation()}>
                     <div className="perfil-background" onClick={onClose}/>
                     <div className='inicio-session-loggin'>
-                        <h2>Nombre Apellido</h2>
-                        <p>Correo</p>
+                        <h2>{userInfo.firstName} {userInfo.lastName}</h2>
+                        <p>{user.email}</p>
                     </div>
                     <div className='principal-loggin'>
                         <button type="submit" className="btn" onClick={handleClickCompras}>Mis Compras</button>
