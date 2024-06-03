@@ -1,0 +1,59 @@
+.confiteria-container {
+    margin: 0px;
+}
+  
+.confiteria-header {
+    padding-top: 60px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+  
+.confiteria-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+
+.confiteria-titulo .confiteria {
+    color: #000000;
+    font-weight: 300;
+    margin: 0px 0px 20px 30px;
+}
+.confiteria-linea {
+    width: 95%;
+    height: 3px;
+    background-color: #1B003A;
+    margin: 0 auto;
+    margin: 0px 0px 0px 30px;
+}
+.confiteria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0px 30px 0px 20px;
+}
+
+.producto {
+    align-self: center;
+    width: 95%;
+    height: 430px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.800);
+    transition: transform 0.2s ease-in-out;
+    background: #D5C6DC;
+}
+.producto-nombre {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.producto-precio {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    padding: 0px 0px 5px;
+    margin: 0;
+}
