@@ -3,9 +3,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, doc, updateDoc, arrayUnion, setDoc, addDoc, collection } from "firebase/firestore";
 
-    
-
-
 export const doSignInWithEmailAndPassword = (email,password) =>{
     return signInWithEmailAndPassword(auth, email, password);
 }
@@ -31,10 +28,8 @@ export const getUserData = async (uid) => {
 
 export async function agregarCompra(uid, nuevaCompra) {
     try {
-      // Obtenemos una referencia al documento del usuario utilizando su UID
       const userRef = doc(db, "Users", uid);
   
-      // Actualizamos el subdocumento de "compras" del usuario agregando la nueva compra
       await updateDoc(userRef, {
         compras: arrayUnion(nuevaCompra)
       });
