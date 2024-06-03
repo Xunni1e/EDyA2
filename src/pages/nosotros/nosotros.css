@@ -1,0 +1,44 @@
+.nosotros-container {
+    margin: 0px;
+}
+  
+.nosotros-header {
+    padding-top: 60px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+  
+.nosotros-titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+
+.nosotros-titulo .sobre {
+    color: #000000;
+    font-weight: 300;
+    margin: 0px 0px 20px 30px;
+}
+
+.nosotros-titulo .nosotros {
+    color: #1B003A;
+    font-weight: 600;
+}
+  
+.nosotros-linea {
+    width: 95%;
+    height: 3px;
+    background-color: #1B003A;
+    margin: 0 auto;
+    margin: 0px 0px 0px 30px;
+}
+  
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);    gap: 20px; /* Espacio entre tarjetas */
+    margin: 30px auto;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}

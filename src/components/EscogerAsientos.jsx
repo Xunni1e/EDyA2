@@ -13,7 +13,7 @@ const asientosOcupados = new Set([
 ]);
   
 const EscogerAsientos = () => {
-    const { seleccionados, seleccionarAsiento, formatSeleccionados } = useAsientos();
+    const { seleccionados, seleccionarAsiento } = useAsientos();
 
     const handleSeleccionAsiento = (fila, numero) => {
         const idAsiento = `${fila}${numero}`;

@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './MetodoPago.css';
 
 const MetodoPago = () => {
   const [metodoActivo, setMetodoActivo] = useState();
 
+  const { id, ciudad } = useParams();
+  const navigate = useNavigate();
+
   const seleccionarMetodo = (metodo) => {
     setMetodoActivo(metodo);
   };
 
+  const handleNavigation = () => {
+    if (metodoActivo) {
+      navigate(`/${ciudad}/pelicula/${id}/pago-2`);
+    }
+  }
+ 
   return (
     <div className="metodo-pago-container">
       <div 
@@ -24,6 +34,13 @@ const MetodoPago = () => {
         <p className='label-credito'>Tarjeta crédito</p>
         <img src="/img/iconos/credito.png" alt="Logo Credito" className="logo-credito" />
       </div>
+      <button 
+        className='continuar-bttn-mtp' 
+        onClick={handleNavigation}
+        disabled={!metodoActivo}
+      >
+        Continuar
+      </button>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { doc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { agregarCompra } from '../firebase/auth';
 import { auth } from '../firebase/firebase';
 
-const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHora, poster }) => {
+const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHora, poster, numeroTransaccion }) => {
     const { seleccionadosFormato } = useAsientos()
     const navigate = useNavigate();
 
@@ -48,8 +48,6 @@ const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHo
         navigate(`/${ciudad}/compras`);
     };
 
-    var numeroTransaccion = 0;
-
     return (
         <div className="detalles-pago">
             <div className="detalles-pago-pelicula-">
@@ -59,7 +57,7 @@ const DetallesPago = ({ titulo, total, formato, sala, clasificacionEdad, fechaHo
                 </div>
                 <div className="datos-pago"> 
                     <p>Sillas: {seleccionadosFormato}</p>
-                    <p>Número de transacción: {numeroTransaccion = Math.floor(Math.random() * 90000000) + 10000000}</p>
+                    <p>Número de transacción: {numeroTransaccion}</p>
                 </div>
             </div>
             <button className="boton-pagar" onClick={handlePagar}>Pagar</button>

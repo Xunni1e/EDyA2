@@ -9,7 +9,7 @@
   width: 500px;
   height: 250px;
   top: 230px;
-  left: 600px;
+  left: 594px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.424);
 }
 
@@ -108,12 +108,15 @@
 
 .asiento.ejemplo.disponible {
   background-color: #fff;
+  cursor: default;
 }
 
 .asiento.ejemplo.ocupado {
   background-color: #572297;
+  cursor: default;
 }
 
 .asiento.ejemplo.seleccionado {
-  background-color: #9A6BD2
+  background-color: #9A6BD2;
+  cursor: default;
 }

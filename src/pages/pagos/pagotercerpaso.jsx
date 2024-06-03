@@ -65,6 +65,8 @@ const PagoTercerPaso = () => {
     const { selectedShowtime, formato } = useFuncion();
     const { id } = useParams();
 
+    const numTransaccion = Math.floor(Math.random() * 90000000) + 10000000;
+
     const datosPelicula = peliculas.find(p => p.id === parseInt(id));
 
     if (!datosPelicula) {
@@ -99,6 +101,7 @@ const PagoTercerPaso = () => {
                 fechaHora={selectedShowtime || 'Fecha y hora no seleccionadas'}
                 total={total}
                 seleccionados={seleccionadosFormato}
+                numeroTransaccion={numTransaccion}
             />
         </>
     );

@@ -12,6 +12,7 @@ import PagoPrimerPaso from "../pages/pagos/pagoprimerpaso";
 import PagoSegundoPaso from "../pages/pagos/pagosegundopaso";
 import PagoTercerPaso from "../pages/pagos/pagotercerpaso";
 import Compras from "../pages/compras/compras";
+import Nosotros from "../pages/nosotros/nosotros";
 import NotFound from "../pages/notfound/notfound";
 import { RedirectCali } from "../hooks/useRedirect";
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
     {
         path:"/:ciudad/*",
         element: <NotFound/>
+    },
+    {
+        path:"/:ciudad/nosotros",
+        element: <Nosotros/>
     }
 ])
 

@@ -1,11 +1,15 @@
 import React from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { peliculasDB } from '../../pages/infopelicula/infopelicula';
+import { useAsientos } from '../../../context/useAsientosContext';
 import './DetallesPeliculaPago.css';
 
 const DetallesPeliculaPago = ({ titulo, poster, formato, sala, clasificacionEdad, fechaHora }) => {
   const navigate = useNavigate();
+
   const { id, ciudad } = useParams();
+  const { resetAsientos } = useAsientos();
+
   const paso = useLocation().pathname.split('/').pop();
   const pasoNumero = parseInt(paso.split('-')[1]);
 
@@ -15,8 +19,10 @@ const DetallesPeliculaPago = ({ titulo, poster, formato, sala, clasificacionEdad
   const handleNavigation = (direction) => {
     if (direction === 'back') {
       if (pasoNumero === 1) {
+        resetAsientos();
         navigate(`/${ciudad}/pelicula/${id}`);
       } else {
+        resetAsientos();
         navigate(`/${ciudad}/pelicula/${id}/pago-${pasoNumero - 1}`);
       }
     } else {
@@ -51,7 +57,7 @@ const DetallesPeliculaPago = ({ titulo, poster, formato, sala, clasificacionEdad
           <h2 className='titulo-pag'>{tituloPagina}</h2>
           <span className='pasos'>{`${pasoNumero} de 3`}</span>
         </div>
-        {pasoNumero < 3 && (
+        {pasoNumero == 2 && (
           <button className='continuar-bttn' onClick={() => handleNavigation('forward')}>Continuar</button>
         )}
       </div>

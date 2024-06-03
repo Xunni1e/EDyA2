@@ -17,7 +17,7 @@
     width: 300px;
     max-width: 100000px;
     height: 150px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
 
   .tarjeta-debito {
@@ -34,7 +34,7 @@
     width: 300px;
     max-width: 100000px;
     height: 150px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
   
   .logo-pago {
@@ -70,6 +70,14 @@
 
   .tarjeta-debito:hover, .tarjeta-credito:hover {
     color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.427);
+    background-color: #9A6BD2;
+    color: white;
+  }
+
+  .tarjeta-debito:active, .tarjeta-credito:active {
+    color: white;
+    transition: transform 0.001s ease-in-out;
     transform: scale(1.05);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.427);
     background-color: #9A6BD2;
@@ -79,4 +87,28 @@
   .activo {
     background-color: #9A6BD2;
     color: #ffffff;
+    transform: scale(1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.427);
+  }
+
+  .continuar-bttn-mtp {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    position: absolute;
+    left: 825px;
+    top: 500px;
+    background-color: #572297;
+    border-radius: 14px;
+    border-color: transparent;
+    color: white;
+    height: 40px;
+    width: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.524);
+    cursor: pointer;
+}
+
+  .continuar-bttn-mtp:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
   }
