@@ -17,7 +17,7 @@
 
 ## 📝 Descripción
 
-**CineWAO** es una plataforma web moderna y completa para la gestión y compra de boletos de cine. Ofrece una experiencia de usuario fluida con funcionalidades de cartelera, estrenos, confitería y un sistema completo de compra de boletos con selección de asientos. La aplicación está diseñada para funcionar en múltiples ciudades de Colombia, proporcionando una interfaz accesible, moderna y responsive.
+**CineWAO** es una plataforma web moderna y completa para la gestión y compra de boletos de cine. Ofrece una experiencia de usuario fluida con funcionalidades de cartelera, estrenos, confitería y un sistema completo de compra de boletos con selección de asientos. La aplicación está diseñada para funcionar en múltiples ciudades de Colombia, proporcionando una interfaz accesible y moderna.
 
 ---
 
